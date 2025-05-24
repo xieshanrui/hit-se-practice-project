@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事1：系统登录</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2 style="text-align: left; margin: 0 0 20px 0;">#0001 系统登录</h2>
+        <p><strong>作为一个[注册用户]，我想要[通过账号密码或WeLink登录系统]，以便于[访问我的个人通知和日程]</strong></p>
+
+<div class="login-container" style="border:1px solid #ddd; padding:20px; max-width:400px; margin:0 auto; font-family:Arial; position:relative;">
+    <h2 style="text-align:center; color:#333; margin-bottom:20px;">用户登录</h2>
+    
+    <!-- 用户名输入区 -->
+    <div style="margin-bottom:20px; position:relative;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div style="flex:1;">
+          <label style="display:block; margin-bottom:5px; font-weight:bold;">用户名/邮箱</label>
+          <input type="text" placeholder="请输入用户名或邮箱" 
+                 style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;">
+        </div>
+        <div style="width:150px; margin-left:10px; font-size:12px; color:#666; padding:5px; background:#f5f5f5;">
+          • 支持学号/邮箱/手机号<br>
+          • 需验证格式有效性
+        </div>
+      </div>
+    </div>
+  
+    <!-- 密码输入区 -->
+    <div style="margin-bottom:15px; position:relative;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+        <div style="flex:1;">
+          <label style="display:block; margin-bottom:5px; font-weight:bold;">密码</label>
+          <input type="password" placeholder="请输入密码" 
+                 style="width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;">
+        </div>
+        <div style="width:150px; margin-left:10px; font-size:12px; color:#666; padding:5px; background:#f5f5f5;">
+          • 至少8位字符<br>
+          • 需包含大小写字母<br>
+          • 错误尝试限制5次
+        </div>
+      </div>
+    </div>
+  
+    <!-- 记住我选项 -->
+    <div style="margin-bottom:20px; display:flex; align-items:center; position:relative;">
+      <input type="checkbox" id="remember" style="margin-right:5px;">
+      <label for="remember" style="font-size:14px;">记住我</label>
+      <div style="margin-left:10px; font-size:12px; color:#666;">
+        (勾选后7天内自动登录)
+      </div>
+    </div>
+  
+    <!-- 登录按钮 -->
+    <div style="margin-bottom:15px; position:relative;">
+      <button type="submit" 
+              style="width:100%; padding:10px; background-color:#4CAF50; color:white; 
+                    border:none; border-radius:4px; cursor:pointer; font-weight:bold;">
+        登录
+      </button>
+      <div style="font-size:11px; color:#666; text-align:center; margin-top:5px;">
+        通过SRS Web服务进行身份验证
+      </div>
+    </div>
+  
+    <!-- WeLink登录 -->
+    <div style="margin:20px 0; text-align:center; position:relative;">
+      <div style="border-top:1px solid #eee; margin-bottom:10px;"></div>
+      <span style="color:#666; font-size:14px;">或通过WeLink登录</span>
+      <div style="font-size:11px; color:#666; margin-top:5px;">
+        需先完成WeLink账号绑定
+      </div>
+    </div>
+  
+    <!-- 忘记密码 -->
+    <div style="text-align:center;">
+      <a href="#" style="color:#2196F3; font-size:13px; text-decoration:none;">
+        忘记密码？
+      </a>
+      <div style="font-size:11px; color:#666; margin-top:3px;">
+        跳转至密码找回页面
+      </div>
+    </div>
+  
+    <!-- 错误消息区域 -->
+    <div style="margin-top:15px; padding:10px; background:#ffeeee; border-left:3px solid #f44336; 
+         display:none;" id="error-message">
+      此处显示登录错误提示信息
+    </div>
+  </div>
+  
+
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>验证凭证后跳转至个人主页</li>
+            <li>勾选"记住我"时保存7天登录状态</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"邮箱格式不正确"</li>
+            <li>"账号未注册，请先完成注册"</li>
+            <li>"密码错误，剩余尝试次数X次"</li>
+            <li>"WeLink服务不可用，请改用账号登录"</li>
+            <li>"账号已被冻结，请联系管理员"</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

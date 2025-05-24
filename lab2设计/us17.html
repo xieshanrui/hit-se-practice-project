@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事17：成员管理</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+        .member-list {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .member-item {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0017 成员管理</h2>
+        <p><strong>作为一个[管理员]，我想要[添加/移除组织成员]，以便于[维护组织架构]</strong></p>
+
+        <div style="border:1px solid #ddd; padding:20px; max-width:400px; margin:0 auto; font-family:Arial;">
+            <h3 style="text-align:center; margin-bottom:20px;">组织成员管理</h3>
+            
+            <div class="member-list">
+                <div style="margin-bottom:15px;">
+                    <input type="text" placeholder="搜索成员" style="width:70%; padding:8px;">
+                    <button style="padding:8px 15px; background:#2196F3; color:white; border:none; border-radius:4px; cursor:pointer; margin-left:10px;">
+                        搜索
+                    </button>
+                    <div class="annotation">
+                        • 支持姓名/学号搜索<br>
+                        • 结果实时显示
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div style="flex:1;">张三 (20230001)</div>
+                    <button style="padding:5px 10px; background:#f44336; color:white; border:none; border-radius:4px; cursor:pointer;">
+                        移除
+                    </button>
+                </div>
+                <div class="member-item">
+                    <div style="flex:1;">李四 (20230002)</div>
+                    <button style="padding:5px 10px; background:#f44336; color:white; border:none; border-radius:4px; cursor:pointer;">
+                        移除
+                    </button>
+                </div>
+                
+                <div style="margin-top:15px; text-align:center;">
+                    <button style="padding:8px 20px; background:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer;">
+                        添加成员
+                    </button>
+                    <div class="annotation">
+                        • 支持批量导入<br>
+                        • 可设置成员角色
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>添加成员后立即显示在成员列表中</li>
+            <li>移除成员后立即从列表中消失</li>
+            <li>批量导入成功显示导入结果统计</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"成员已存在"</li>
+            <li>"找不到匹配的成员"</li>
+            <li>"无法移除最后一个管理员"</li>
+            <li>导入文件格式错误时提示"请使用标准模板"</li>
+            <li>权限不足时提示"您没有管理权限"</li>
+            <li>取消操作时返回成员列表</li>
+            <li>网络中断时保留本地已做的修改</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事2：WeLink账号绑定</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, button {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2 style="text-align: left; margin: 0 0 20px 0;">#0002 WeLink账号绑定</h2>
+        <p><strong>作为一个[注册用户]，我想要[绑定WeLink账号]，以便于[实现快速登录和消息同步]</strong></p>
+        
+        <div class="form-group">
+            <label>当前账号</label>
+            <input type="text" placeholder="请输入您的系统账号" readonly>
+            <div class="annotation">
+                • 系统自动显示当前登录账号<br>
+                • 需先完成系统登录
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>WeLink账号</label>
+            <input type="text" placeholder="请输入WeLink账号/手机号">
+            <div class="annotation">
+                • 需与WeLink账号一致<br>
+                • 支持手机号或邮箱登录
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>WeLink密码</label>
+            <input type="password" placeholder="请输入WeLink密码">
+            <div class="annotation">
+                • 需通过WeLink身份验证<br>
+                • 不存储密码，仅用于验证
+            </div>
+        </div>
+        
+        <button type="submit">绑定WeLink账号</button>
+        <div class="annotation" style="text-align:center;">
+            通过WeLink开放API进行账号验证
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>绑定成功后显示"WeLink账号绑定成功"提示</li>
+            <li>系统账号与WeLink账号建立关联关系</li>
+            <li>支持通过WeLink快速登录系统</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"WeLink账号格式不正确"</li>
+            <li>"WeLink账号或密码错误"</li>
+            <li>"该WeLink账号已绑定其他系统账号"</li>
+            <li>"WeLink服务暂时不可用，请稍后再试"</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

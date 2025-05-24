@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事3：查看功能介绍</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0003 查看功能介绍</h2>
+        <p><strong>作为一个[新用户]，我想要[查看系统功能导览]，以便于[快速了解核心功能]</strong></p>
+
+        <div style="border:1px solid #ddd; padding:20px; max-width:400px; margin:0 auto; font-family:Arial;">
+            <h3 style="text-align:center; margin-bottom:20px;">系统功能导览</h3>
+            
+            <div style="margin-bottom:15px;">
+                <div style="display:flex; align-items:center; margin-bottom:10px;">
+                    <div style="width:40px; height:40px; background:#4CAF50; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; margin-right:10px;">1</div>
+                    <div>
+                        <h4 style="margin:0;">通知中心</h4>
+                        <div style="font-size:12px; color:#666; margin-top:3px;">
+                            • 接收各类通知消息<br>
+                            • 支持按组织/重要性筛选
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom:15px;">
+                <div style="display:flex; align-items:center; margin-bottom:10px;">
+                    <div style="width:40px; height:40px; background:#2196F3; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; margin-right:10px;">2</div>
+                    <div>
+                        <h4 style="margin:0;">日程管理</h4>
+                        <div style="font-size:12px; color:#666; margin-top:3px;">
+                            • 创建/编辑个人日程<br>
+                            • 支持从通知导入
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom:15px;">
+                <div style="display:flex; align-items:center; margin-bottom:10px;">
+                    <div style="width:40px; height:40px; background:#FF9800; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-weight:bold; margin-right:10px;">3</div>
+                    <div>
+                        <h4 style="margin:0;">组织架构</h4>
+                        <div style="font-size:12px; color:#666; margin-top:3px;">
+                            • 查看所属组织<br>
+                            • 管理员可管理成员
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:20px;">
+                <button style="padding:8px 20px; background:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer;">
+                    开始使用
+                </button>
+                <div style="font-size:11px; color:#666; margin-top:5px;">
+                    点击按钮跳转至主界面
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>显示系统三大核心功能模块介绍</li>
+            <li>点击"开始使用"按钮跳转至主界面</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"功能导览数据加载失败，请刷新重试"</li>
+            <li>"跳转失败，请检查网络连接"</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

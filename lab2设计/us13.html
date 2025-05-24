@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事13：图片上传功能</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0013 图片上传功能</h2>
+        <p><strong>作为一个[发布者]，我想要[在通知中添加图片]，以便丰富通知内容</strong></p>
+
+        <div style="border:1px solid #ddd; padding:20px; max-width:400px; margin:0 auto; font-family:Arial;">
+            <h3 style="text-align:center; margin-bottom:20px;">图片上传</h3>
+            
+            <div style="border:2px dashed #ccc; padding:20px; text-align:center; margin-bottom:15px;">
+                <div style="margin-bottom:10px;">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path>
+                        <line x1="16" y1="5" x2="22" y2="5"></line>
+                        <line x1="19" y1="2" x2="19" y2="8"></line>
+                        <circle cx="9" cy="9" r="2"></circle>
+                        <path d="M21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+                    </svg>
+                </div>
+                <div style="margin-bottom:10px;">拖放图片到此处或点击上传</div>
+                <div class="annotation">
+                    • 支持JPG/PNG格式<br>
+                    • 最大10MB
+                </div>
+                <input type="file" accept="image/*" style="display:none;">
+                <button style="padding:6px 12px; background:#2196F3; color:white; border:none; border-radius:4px; cursor:pointer; margin-top:10px;">
+                    选择图片
+                </button>
+            </div>
+
+            <div style="margin-bottom:15px;">
+                <div style="font-weight:bold; margin-bottom:5px;">已上传图片</div>
+                <div style="display:flex; gap:10px; margin-bottom:10px;">
+                    <div style="width:80px; height:60px; background:#eee; display:flex; align-items:center; justify-content:center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                    <div style="flex:1;">
+                        <div style="font-size:14px;">图片1.jpg</div>
+                        <div style="font-size:12px; color:#666;">1.2MB</div>
+                    </div>
+                    <button style="background:none; border:none; cursor:pointer;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="annotation">
+                    • 支持多图上传<br>
+                    • 可拖拽调整顺序
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:20px;">
+                <button style="padding:8px 20px; background:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer; margin-right:10px;">
+                    确认
+                </button>
+                <button style="padding:8px 20px; background:#f44336; color:white; border:none; border-radius:4px; cursor:pointer;">
+                    取消
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>图片上传后显示预览缩略图</li>
+            <li>图片自动压缩至合适尺寸</li>
+            <li>支持多图上传和顺序调整</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"文件格式不支持"</li>
+            <li>"文件大小超过限制"</li>
+            <li>"上传失败，请重试"</li>
+            <li>"网络连接超时，请检查网络设置"</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

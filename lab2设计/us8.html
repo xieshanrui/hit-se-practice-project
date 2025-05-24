@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事8：日程智能导入</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+        .notification {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .notification-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .notification-content {
+            margin-bottom: 10px;
+        }
+        .schedule-attachment {
+            background: #f0f7ff;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0008 日程智能导入</h2>
+        <p><strong>作为一个[用户]，我想要[系统自动识别通知中的日程信息并一键导入]，以便于[快速创建日程]</strong></p>
+
+        <div style="max-width:500px; margin:0 auto;">
+            <div class="notification">
+                <div class="notification-title">项目进度会议通知</div>
+                <div class="notification-content">
+                    各位项目组成员：<br>
+                    请于11月20日14:00参加项目进度会议，地点：线上会议
+                </div>
+                
+                <div class="schedule-attachment">
+                    <div style="margin-bottom:10px; font-weight:bold;">检测到日程信息：</div>
+                    <div>• 标题：项目进度会议</div>
+                    <div>• 时间：11月20日 14:00 - 15:30</div>
+                    <div>• 地点：线上会议</div>
+                    
+                    <div style="margin-top:15px; text-align:center;">
+                        <button>一键导入日程</button>
+                        <button style="background:#2196F3;">查看详情</button>
+                    </div>
+                </div>
+                <div class="annotation">
+                    • 自动识别通知中的时间/地点信息<br>
+                    • 支持手动调整导入内容
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>导入后自动跳转至新建日程页面并填充识别内容</li>
+            <li>支持用户二次编辑后保存</li>
+            <li>导入的日程立即显示在个人日程列表中</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"未检测到有效日程信息"</li>
+            <li>"时间格式无法识别"</li>
+            <li>"网络连接超时，请检查网络设置"</li>
+            <li>用户取消导入时返回通知详情页</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

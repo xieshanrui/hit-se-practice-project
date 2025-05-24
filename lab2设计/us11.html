@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事11：通知智能分类</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+        .filter-bar {
+            display: flex;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+        .filter-bar select {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .tag {
+            display: inline-block;
+            background: #e0e0e0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0011 通知智能分类</h2>
+        <p><strong>作为一个[用户]，我想要[按组织/重要性筛选通知]，以便于[快速定位]</strong></p>
+
+        <div style="max-width:500px; margin:0 auto;">
+            <div class="filter-bar">
+                <select>
+                    <option>全部组织</option>
+                    <option>计算机学院</option>
+                    <option>软件工程系</option>
+                </select>
+                <select>
+                    <option>全部状态</option>
+                    <option>未读</option>
+                    <option>已读</option>
+                </select>
+                <select>
+                    <option>全部重要性</option>
+                    <option>紧急</option>
+                    <option>重要</option>
+                    <option>普通</option>
+                </select>
+                <div class="annotation">
+                    • 支持多条件组合筛选<br>
+                    • 筛选结果即时更新
+                </div>
+            </div>
+
+            <div style="margin-bottom:15px;">
+                <span class="tag">计算机学院</span>
+                <span class="tag" style="background:#ffeb3b;">重要</span>
+                <span class="tag" style="background:#ff9800;">紧急</span>
+                <div class="annotation">
+                    • 标签颜色区分重要性<br>
+                    • 点击标签可快速筛选
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>筛选条件组合后立即显示匹配结果</li>
+            <li>点击标签可快速添加筛选条件</li>
+            <li>紧急通知显示红色标记</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"暂无匹配通知"</li>
+            <li>"网络连接超时，请检查网络设置"</li>
+            <li>"筛选条件冲突"</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

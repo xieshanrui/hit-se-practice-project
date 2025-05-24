@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事15：查看组织详情</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+        .member-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .member-avatar {
+            width: 40px;
+            height: 40px;
+            background: #2196F3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0015 查看组织详情</h2>
+        <p><strong>作为一个[用户]，我想要[查看组织成员结构]，以便联系相关人员</strong></p>
+
+        <div style="border:1px solid #ddd; padding:20px; max-width:400px; margin:0 auto; font-family:Arial;">
+            <h3 style="text-align:center; margin-bottom:20px;">计算机学院</h3>
+            
+            <div style="margin-bottom:15px;">
+                <div style="font-weight:bold; margin-bottom:10px;">组织信息</div>
+                <div style="margin-bottom:5px;"><strong>创建时间：</strong>2020-09-01</div>
+                <div style="margin-bottom:5px;"><strong>组织类型：</strong>院级组织</div>
+                <div style="margin-bottom:5px;"><strong>上级组织：</strong>哈尔滨工业大学</div>
+                <div class="annotation">
+                    • 支持查看组织历史<br>
+                    • 可申请加入/退出组织
+                </div>
+            </div>
+
+            <div style="margin-bottom:15px;">
+                <div style="font-weight:bold; margin-bottom:10px;">成员列表 (32人)</div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">张</div>
+                    <div>
+                        <div style="font-weight:bold;">张三</div>
+                        <div style="font-size:12px; color:#666;">院长</div>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">李</div>
+                    <div>
+                        <div style="font-weight:bold;">李四</div>
+                        <div style="font-size:12px; color:#666;">教授</div>
+                    </div>
+                </div>
+                
+                <div class="member-item">
+                    <div class="member-avatar">王</div>
+                    <div>
+                        <div style="font-weight:bold;">王五</div>
+                        <div style="font-size:12px; color:#666;">辅导员</div>
+                    </div>
+                </div>
+                
+                <div class="annotation">
+                    • 支持搜索和筛选成员<br>
+                    • 点击成员可查看详情
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:20px;">
+                <button style="padding:8px 20px; background:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer; margin-right:10px;">
+                    查看更多
+                </button>
+                <button style="padding:8px 20px; background:#2196F3; color:white; border:none; border-radius:4px; cursor:pointer;">
+                    联系管理员
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>显示组织基本信息和管理架构</li>
+            <li>展示组织成员列表及角色</li>
+            <li>支持搜索和筛选成员</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"组织信息加载失败"</li>
+            <li>"权限不足，无法查看"</li>
+            <li>"网络连接超时，请检查网络设置"</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事9：查看通知列表</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+        .notification-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .notification-item.unread {
+            background: #f0f7ff;
+            border-left: 3px solid #2196F3;
+        }
+        .notification-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .notification-meta {
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+        }
+        .filter-bar {
+            display: flex;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+        .filter-bar select {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0009 查看通知列表</h2>
+        <p><strong>作为一个[用户]，我想要[按时间倒序查看所有通知]，以便于[及时获取信息]</strong></p>
+
+        <div style="max-width:500px; margin:0 auto;">
+            <div class="filter-bar">
+                <select>
+                    <option>全部组织</option>
+                    <option>计算机学院</option>
+                    <option>软件工程系</option>
+                </select>
+                <select>
+                    <option>全部状态</option>
+                    <option>未读</option>
+                    <option>已读</option>
+                </select>
+                <div class="annotation">
+                    • 支持按组织/状态筛选<br>
+                    • 默认按时间倒序排列
+                </div>
+            </div>
+
+            <div class="notification-item unread">
+                <div class="notification-title">项目进度会议通知</div>
+                <div class="notification-meta">
+                    <span>计算机学院</span>
+                    <span>11月15日 10:30</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-title">系统维护公告</div>
+                <div class="notification-meta">
+                    <span>系统管理</span>
+                    <span>11月14日 16:45</span>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-title">课程调整通知</div>
+                <div class="notification-meta">
+                    <span>软件工程系</span>
+                    <span>11月13日 09:15</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>列表按时间倒序显示所有通知</li>
+            <li>未读通知有视觉区分</li>
+            <li>点击通知跳转至详情页</li>
+            <li>筛选条件即时生效</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"暂无通知"</li>
+            <li>"网络连接超时，请检查网络设置"</li>
+            <li>"筛选条件无效"</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

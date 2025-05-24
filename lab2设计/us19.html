@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事19：系统监控看板</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+        .dashboard {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0019 系统监控看板</h2>
+        <p><strong>作为一个[管理员]，我想要[查看服务器状态]，以便于[维护系统稳定]</strong></p>
+
+        <div style="border:1px solid #ddd; padding:20px; max-width:400px; margin:0 auto; font-family:Arial;">
+            <h3 style="text-align:center; margin-bottom:20px;">系统监控看板</h3>
+            
+            <div class="dashboard">
+                <div class="metric">
+                    <span>CPU使用率</span>
+                    <span style="color:#4CAF50;">42%</span>
+                </div>
+                <div class="metric">
+                    <span>内存使用</span>
+                    <span style="color:#2196F3;">3.2/8GB</span>
+                </div>
+                <div class="metric">
+                    <span>存储空间</span>
+                    <span style="color:#FF9800;">45/120GB</span>
+                </div>
+                <div class="metric">
+                    <span>在线用户</span>
+                    <span>1,243</span>
+                </div>
+                <div class="annotation">
+                    • 数据每30秒自动刷新<br>
+                    • 支持手动刷新
+                </div>
+                
+                <div style="margin-top:20px; text-align:center;">
+                    <button style="padding:8px 20px; background:#2196F3; color:white; border:none; border-radius:4px; cursor:pointer;">
+                        刷新
+                    </button>
+                    <button style="padding:8px 20px; background:#9C27B0; color:white; border:none; border-radius:4px; cursor:pointer; margin-left:15px;">
+                        详细报告
+                    </button>
+                    <div class="annotation">
+                        • 详细报告可导出为PDF<br>
+                        • 支持自定义时间范围
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>实时显示系统各项指标</li>
+            <li>手动刷新后立即更新数据</li>
+            <li>详细报告包含完整监控数据</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"无法连接监控服务"</li>
+            <li>"权限不足，无法查看"</li>
+            <li>数据刷新失败时显示上次缓存数据</li>
+            <li>报告生成失败时提示"请稍后重试"</li>
+            <li>浏览器不支持时显示简化版本</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

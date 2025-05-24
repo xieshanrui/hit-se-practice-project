@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事10：发送新通知</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .recipient-tag {
+            display: inline-block;
+            background: #e0e0e0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 8px 20px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-save {
+            background: #4CAF50;
+        }
+        .btn-cancel {
+            background: #f44336;
+        }
+        .btn-attach {
+            background: #2196F3;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0010 发送新通知</h2>
+        <p><strong>作为一个[发布者]，我想要[编写并发送新通知]，以便于[传达重要信息]</strong></p>
+
+        <div style="border:1px solid #ddd; padding:20px; max-width:500px; margin:0 auto;">
+            <div class="form-group">
+                <label>通知标题</label>
+                <input type="text" placeholder="请输入通知标题">
+                <div class="annotation">
+                    • 必填项，最长100字符<br>
+                    • 支持特殊字符
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>接收组织</label>
+                <select multiple style="height:100px;">
+                    <option>计算机学院</option>
+                    <option selected>软件工程系</option>
+                    <option>2023级硕士班</option>
+                </select>
+                <div class="annotation">
+                    • 支持多选<br>
+                    • 可搜索组织名称
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>发送方式</label>
+                <select>
+                    <option>普通通知</option>
+                    <option>紧急通知</option>
+                    <option>系统公告</option>
+                </select>
+                <div class="annotation">
+                    • 紧急通知会触发推送提醒<br>
+                    • 系统公告显示在首页
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>通知内容</label>
+                <textarea rows="5" placeholder="请输入通知内容"></textarea>
+                <div class="annotation">
+                    • 支持富文本编辑<br>
+                    • 可添加图片/附件
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>附件</label>
+                <div style="border:1px dashed #ddd; padding:10px; text-align:center;">
+                    <button class="btn-attach">添加附件</button>
+                    <div class="annotation">
+                        • 支持PDF/Word/Excel等格式<br>
+                        • 单个文件不超过10MB
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn-save">发送通知</button>
+                <button class="btn-cancel">取消</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>通知发送后显示发送成功提示</li>
+            <li>接收者立即收到通知</li>
+            <li>紧急通知触发推送提醒</li>
+            <li>系统公告显示在首页</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"标题不能为空"</li>
+            <li>"请选择至少一个接收组织"</li>
+            <li>"内容长度超过限制"</li>
+            <li>"附件大小超过限制"</li>
+            <li>"网络连接超时，请检查网络设置"</li>
+            <li>用户取消发送时返回通知列表</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

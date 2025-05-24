@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户故事16：多级组织架构</title>
+    <style>
+        .card {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .front {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .annotation {
+            font-size: 12px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        h2 {
+            color: #333;
+            text-align: left;
+            margin: 0 0 20px 0;
+        }
+        .tree-view {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+        }
+        .tree-node {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="front">
+        <h2>#0016 多级组织架构</h2>
+        <p><strong>作为一个[管理员]，我想要[创建院系-班级多级组织]，以便于[精确控制通知的接收范围]</strong></p>
+
+        <div style="border:1px solid #ddd; padding:20px; max-width:400px; margin:0 auto; font-family:Arial;">
+            <h3 style="text-align:center; margin-bottom:20px;">组织架构管理</h3>
+            
+            <div class="tree-view">
+                <div>学校组织架构</div>
+                <div class="tree-node">
+                    <div>计算机学院</div>
+                    <div class="tree-node">
+                        <div>2023级</div>
+                        <div class="tree-node">
+                            <div>1班</div>
+                            <div class="tree-node">
+                                <div>小组1</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="annotation">
+                    • 支持无限级嵌套<br>
+                    • 拖动可调整层级关系
+                </div>
+            </div>
+
+            <div style="margin-top:15px;">
+                <button style="padding:8px 15px; background:#2196F3; color:white; border:none; border-radius:4px; cursor:pointer; margin-right:10px;">
+                    添加子组织
+                </button>
+                <button style="padding:8px 15px; background:#ff9800; color:white; border:none; border-radius:4px; cursor:pointer; margin-right:10px;">
+                    编辑
+                </button>
+                <button style="padding:8px 15px; background:#f44336; color:white; border:none; border-radius:4px; cursor:pointer;">
+                    删除
+                </button>
+                <div class="annotation">
+                    • 删除组织需先转移成员<br>
+                    • 编辑支持批量操作
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="back">
+        <h3>确认条件</h3>
+        
+        <h4>成功：</h4>
+        <ul>
+            <li>成功创建多级组织后立即显示在组织列表中</li>
+            <li>组织层级关系正确保存</li>
+            <li>通知可按组织层级精准发送</li>
+        </ul>
+        
+        <h4>失败：</h4>
+        <ul>
+            <li>"组织名称不能为空"</li>
+            <li>"组织名称已存在"</li>
+            <li>"无法删除非空组织"</li>
+            <li>管理员取消创建时返回组织列表</li>
+            <li>网络中断时提示"连接失败，请稍后重试"</li>
+            <li>权限不足时提示"您没有操作权限"</li>
+            <li>尝试删除组织时提示先转移成员</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
